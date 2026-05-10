@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Course</title>
+</head>
+<body>
+
+<h1>NexEducation Course Upload</h1>
+
+<form id="courseForm">
+    <input type="text" id="title" placeholder="Course Title" required><br><br>
+
+    <input type="text" id="description" placeholder="Course Description" required><br><br>
+
+    <input type="number" id="price" placeholder="Course Price" required><br><br>
+
+    <input type="text" id="videoLink" placeholder="Video Link" required><br><br>
+
+    <button type="submit">Upload Course</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+document.getElementById("courseForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const title = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+    const price = document.getElementById("price").value;
+    const videoLink = document.getElementById("videoLink").value;
+
+    const response = await fetch("http://localhost:5000/add-course", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title,
+            description,
+            price,
+            videoLink
+        })
+    });
+
+    const data = await response.json();
+
+    if(response.ok){
+        document.getElementById("message").innerHTML =
+        "<h3 style='color:green;'>Course Uploaded Successfully ✅</h3>";
+
+        document.getElementById("courseForm").reset();
+    }
+    else{
+        document.getElementById("message").innerHTML =
+        "<h3 style='color:red;'>Course Upload Failed ❌</h3>";
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+body{
+    margin:0;
+    font-family:Arial;
+    text-align:center;
+}
+
+header{
+    background:green;
+    color:white;
+    padding:20px;
+}
+
+.hero{
+    background:orange;
+    padding:100px;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexEducation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#ffc918;color:#fafafa;}
+
+header{
+background:#fad506;
+color:white;
+padding:15px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-section img {
+    border-radius: 50%;
+}
+.logo span{
+color:rgb(255, 255, 255);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+.hero{
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1');
+background-size:cover;
+background-position:center;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+font-size:22px;
+margin:20px;
+}
+
+.btn{
+background:rgb(12, 12, 12);
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:5px;
+font-size:18px;
+cursor:pointer;
+}
+
+.marquee{
+background:#222;
+color:white;
+padding:10px;
+font-weight:bold;
+}
+
+.section{
+padding:50px;
+text-align:center;
+}
+
+.course-box{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:rgb(0, 0, 0);
+padding:20px;
+width:250px;
+border-radius:10px;
+box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+}
+
+footer{
+background:#070707;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.social-icons a{
+color:rgba(0, 0, 0, 0.315);
+margin:10px;
+font-size:20px;
+text-decoration:none;
+}
+#registerForm{
+    background:white;
+    padding:40px;
+    width:400px;
+    margin:50px auto;
+    border-radius:10px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.2);
+}
+
+#registerForm input{
+    width:300px;
+    padding:10px;
+    margin:10px;
+}
+
+#message{
+    margin-top:20px;
+    font-weight:bold;
+    color:green;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-section">
+        <img src="images/logo.png" alt="NexEducation Logo" width="80">
+        <div>
+            <h2>NexEducation</h2>
+            <p>Study Smart, Score Higher</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Notes</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<div class="marquee">
+<marquee>📢 New UPSC Notes Uploaded | Live Classes Every Sunday | Download Free PDFs Now!</marquee>
+</div>
+
+<section class="hero">
+<h1>Study Smart, Score Higher</h1>
+<p>UPSC | SSC | Govt Exam Notes | Live Classes | Smart Learning</p>
+<button class="btn">Join Now</button>
+<section class="section" style="background:white;">
+    <h2>Student Registration</h2>
+    <br>
+
+    <form id="registerForm">
+        <input type="text" id="name" placeholder="Enter Name" required><br><br>
+
+        <input type="email" id="email" placeholder="Enter Email" required><br><br>
+
+        <input type="password" id="password" placeholder="Enter Password" required><br><br>
+
+        <button type="submit" class="btn">Register Now</button>
+    </form>
+
+    <p id="message"></p>
+</section>
+<section class="section">
+    <h2>Student Login</h2>
+
+    <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Enter Email" required><br><br>
+
+        <input type="password" id="loginPassword" placeholder="Enter Password" required><br><br>
+
+        <button type="submit" class="btn">Login Now</button>
+    </form>
+
+    <p id="loginMessage"></p>
+</section>
+<section class="section">
+    <h2>Our Courses</h2>
+    <div id="courseList" class="course-box"></div>
+</section>
+<br>
+<div class="course-box">
+<div class="card">
+<h3>UPSC Preparation</h3>
+<p>Complete Notes + Live Classes</p>
+</div>
+
+<div class="card">
+<h3>SSC Preparation</h3>
+<p>Mock Tests + PDFs</p>
+</div>
+
+<div class="card">
+<h3>Current Affairs</h3>
+<p>Daily Updates</p>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:#eee;">
+<h2>About Founder Vision</h2>
+<p>Our mission is to provide affordable quality education and smart study materials for every student in India.</p>
+</section>
+
+<section class="section">
+<h2>Live Social Media</h2>
+<p>Instagram Live | Facebook Live | YouTube Live Classes</p>
+</section>
+<section class="section" style="background:#000000;">
+    <h2>Contact Us</h2>
+
+    <p>Email: nexeducation@gmail.com</p>
+    <p>Phone: +91 XXXXX XXXXX</p>
+    <p>Address: Jeypore, Koraput, Odisha, India</p>
+</section>
+<footer>
+    <p>© 2026 NexEducation | Study Smart, Score Higher</p>
+
+    <div class="social-icons">
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://t.me" target="_blank">Telegram</a>
+    </div>
+</footer>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

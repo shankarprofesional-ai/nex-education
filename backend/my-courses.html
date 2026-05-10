@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+</head>
+<body>
+
+    <h1>My Purchased Courses</h1>
+
+    <div id="myCourses"></div>
+
+    <script>
+        async function loadMyCourses() {
+            try {
+                const response = await fetch(
+                    "http://localhost:5000/my-courses/student@gmail.com"
+                );
+
+                const courses = await response.json();
+
+                let output = "";
+
+                courses.forEach(course => {
+    output += `
+        <div style="border:1px solid black;padding:20px;margin:20px;">
+            <h3>${course.courseTitle}</h3>
+
+            <p>Payment ID: ${course.paymentId}</p>
+
+            <a href="https://youtube.com" target="_blank">
+                <button>Watch Course</button>
+            </a>
+        </div>
+    `;
+});
+
+                document.getElementById("myCourses").innerHTML = output;
+
+            } catch(error) {
+                console.log(error);
+            }
+        }
+
+        loadMyCourses();
+    </script>
+
+</body>
+</html>

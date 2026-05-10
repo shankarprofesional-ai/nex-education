@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body style="font-family:Arial; text-align:center;">
+
+    <h1>NexEducation Admin Panel</h1>
+    <h2>Registered Students</h2>
+
+    <table border="1" width="80%" align="center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable"></tbody>
+    </table>
+
+    <script>
+        async function loadStudents() {
+            const response = await fetch("http://localhost:5000/students");
+            const students = await response.json();
+
+            let rows = "";
+
+            students.forEach(student => {
+                rows += `
+                    <tr>
+                        <td>${student.name}</td>
+                        <td>${student.email}</td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById("studentTable").innerHTML = rows;
+        }
+
+        loadStudents();
+    </script>
+
+</body>
+</html>
